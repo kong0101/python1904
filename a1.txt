@@ -1,4 +1,56 @@
 hello monica
 see you
 sss
+a.创建远程工作区
+b.建立本地工作区和远程工作区之间的连接：git remote add origin git@github.com:github账户名/远程工作区的名称.git
+c.建立本地版本库和远程版本库之间的连接：git push -u origin master
+#d。在工作的时候，git add filename---->git commit -m "xx"---->git push origin master
 
+#说明：origin其实可以是任意的标识符，但是默认为origin
+
+演示命令：
+lichen@lichen-host:~/.ssh$ cd ..
+lichen@lichen-host:~$ cd Desktop/
+lichen@lichen-host:~/Desktop$ cd python1904/
+lichen@lichen-host:~/Desktop/python1904$ git remote add origin git@github.com:yangyang-git/python1904.git
+lichen@lichen-host:~/Desktop/python1904$ ls
+a1.txt
+lichen@lichen-host:~/Desktop/python1904$ git push -u origin master
+枚举对象: 18, 完成.
+对象计数中: 100% (18/18), 完成.
+使用 8 个线程进行压缩
+压缩对象中: 100% (9/9), 完成.
+写入对象中: 100% (18/18), 1.39 KiB | 711.00 KiB/s, 完成.
+总共 18 （差异 0），复用 0 （差异 0）
+To github.com:yangyang-git/python1904.git
+ * [new branch]      master -> master
+分支 'master' 设置为跟踪来自 'origin' 的远程分支 'master'。
+lichen@lichen-host:~/Desktop/python1904$ touch b1.txt
+lichen@lichen-host:~/Desktop/python1904$ vim b1.txt 
+lichen@lichen-host:~/Desktop/python1904$ git add b1.txt 
+lichen@lichen-host:~/Desktop/python1904$ git commit  -m "fsgd"
+[master b1283d3] fsgd
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b1.txt
+lichen@lichen-host:~/Desktop/python1904$ git status
+位于分支 master
+您的分支领先 'origin/master' 共 1 个提交。
+  （使用 "git push" 来发布您的本地提交）
+
+无文件要提交，干净的工作区
+lichen@lichen-host:~/Desktop/python1904$ git push origin master
+枚举对象: 4, 完成.
+对象计数中: 100% (4/4), 完成.
+使用 8 个线程进行压缩
+压缩对象中: 100% (2/2), 完成.
+写入对象中: 100% (3/3), 271 字节 | 271.00 KiB/s, 完成.
+总共 3 （差异 0），复用 0 （差异 0）
+To github.com:yangyang-git/python1904.git
+   384052d..b1283d3  master -> master
+lichen@lichen-host:~/Desktop/python1904$ git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+
+无文件要提交，干净的工作区
+lichen@lichen-host:~/Desktop/python1904$ ls
+a1.txt  b1.txt
